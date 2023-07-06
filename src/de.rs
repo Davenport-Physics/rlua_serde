@@ -8,6 +8,16 @@ use error::{Error, Result};
 #[cfg(feature = "arrays")]
 #[inline]
 fn table_is_array(t: &rlua::Table) -> Result<bool> {
+
+    match t.contains_key(1) {
+        Ok(has_first_idx) => {
+            if has_first_idx {
+                return Ok(true)
+            }
+        },
+        Err(_) => {}
+    }
+
     let mt_arr: Option<bool> = if let Some(mt) = t.get_metatable() {
         mt.get("__array")?
     } else {
