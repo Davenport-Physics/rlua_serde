@@ -1,4 +1,4 @@
-# rlue_serde
+# rlua_serde
 
 Implementation of [serde](https://serde.rs/) Serializer/Deserializer for [rlua::Value](https://docs.rs/rlua/0.12/rlua/enum.Value.html)
 
